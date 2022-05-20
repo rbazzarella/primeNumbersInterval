@@ -1,0 +1,17 @@
+body {
+    background: #add8e6;
+  }
+  
+  #container {
+    text-align: center;
+  }
+  
+  legend {
+    background: #8eb0bc;
+    border-radius: 10px;
+  }
+  
+  fieldset {
+    background: #e4f2f7;
+    border-radius: 10px;
+  }  
