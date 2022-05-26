@@ -1,17 +1,29 @@
 body {
     background: #add8e6;
-  }
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
   
-  #container {
-    text-align: center;
-  }
+h1 {
+  text-align: center;
+}
+
+#container {
+  text-align: center;
+}
   
-  legend {
-    background: #8eb0bc;
-    border-radius: 10px;
-  }
+legend {
+  background: #8eb0bc;
+  border-radius: 10px;
+}
   
-  fieldset {
-    background: #e4f2f7;
-    border-radius: 10px;
-  }  
+fieldset {
+  background: #e4f2f7;
+  border-radius: 10px;
+  width: 400px;
+  margin: auto;
+}
+
+#answer {
+  margin: auto;
+  width: 800px;
+}

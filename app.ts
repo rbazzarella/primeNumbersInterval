@@ -1,11 +1,10 @@
-let loopCount = 0;
-
 class PrimesInterval {
+  private loopCount = 0;
 
-  const min = document.getElementById('min')! as HTMLInputElement;
-  const max = document.getElementById('max')! as HTMLInputElement;
-  const form = document.querySelector('form')! as HTMLFormElement;
-  const answer = document.querySelector('#test');
+  private min = document.getElementById('min')! as HTMLInputElement;
+  private max = document.getElementById('max')! as HTMLInputElement;
+  private form = document.querySelector('form')! as HTMLFormElement;
+  private answer = document.querySelector('#answer');
 
   constructor() {
     this.submitingForm();
@@ -25,14 +24,13 @@ class PrimesInterval {
       return;
     }
 
-
     if(this.min.value.length == 0 || this.max.value.length == 0) {
-      this.answer.innerHTML = "the fields cannot be blank. Fill both fields, please";
+      this.answer.innerHTML = "The fields cannot be blank. Fill both fields, please";
       return;
     }
 
     if(minVal >= maxVal) {
-      this.answer.innerHTML = "minimum value should be less then maximun value";
+      this.answer.innerHTML = "Minimum value should be less then maximun value";
       return;
     }
 
@@ -45,13 +43,13 @@ class PrimesInterval {
     const result: number[] = this.filterPrimes(arr);
 
     if(result.length === 0) {
-      this.answer.innerHTML = "there isn't any prime number between " + minVal + " and " + maxVal;
+      this.answer.innerHTML = "There isn't any prime number between " + minVal + " and " + maxVal;
       return;
     }
 
-    console.log('loopCount', loopCount);
+    console.log('loopCount', this.loopCount);
 
-    this.answer.innerHTML = "there are (is) " + result.length + " prime number(s) between " + minVal + " and " + maxVal + " and they are: <br/><br/>" + result.join(", ");
+    this.answer.innerHTML = "There are (is) " + result.length + " prime number(s) between " + minVal + " and " + maxVal + " and they are: <br/><br/>" + result.join(", ");
   }
 
   isPrime(num: number):   boolean {
@@ -60,7 +58,7 @@ class PrimesInterval {
     let count = 1;
  
     while(div > 0) {
-      loopCount++;
+      this.loopCount++;
       if(num%div === 0) {
         count++;
         if(count > 2) {
@@ -90,7 +88,4 @@ class PrimesInterval {
   }
 }
 
-const primesintervalnst = new PrimesInterval();
-
-addEventListener('load', function(e) {
-});
+new PrimesInterval();
